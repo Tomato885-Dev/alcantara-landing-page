@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festival Alcántara 2026</title>
+  <meta name="description" content="Festival Alcántara 2026 — tres días de música en vivo. Line-up, entradas, fechas y toda la información del festival." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__logo">ALCÁNTARA</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#lineup">Line-up</a>
+        <a href="#fechas">Fechas</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#faq">FAQ</a>
+        <a href="#entradas" class="nav__cta">Entradas</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--3"></div>
+    <div class="hero__content">
+      <p class="hero__kicker">13 · 14 · 15 MARZO 2026 — PARQUE CENTRAL</p>
+      <h1 class="hero__title">FESTIVAL<br/>ALCÁNTARA</h1>
+      <p class="hero__sub">Tres días. Cuatro escenarios. Una experiencia inolvidable.</p>
+      <div class="hero__actions">
+        <a href="#entradas" class="btn btn--primary">Comprar entradas</a>
+        <a href="#lineup" class="btn btn--ghost">Ver line-up</a>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown" aria-label="Cuenta regresiva">
+        <div class="countdown__item"><span id="cd-days">00</span><small>Días</small></div>
+        <div class="countdown__item"><span id="cd-hours">00</span><small>Horas</small></div>
+        <div class="countdown__item"><span id="cd-min">00</span><small>Min</small></div>
+        <div class="countdown__item"><span id="cd-sec">00</span><small>Seg</small></div>
+      </div>
+    </div>
+    <a href="#lineup" class="hero__scroll" aria-label="Bajar">↓</a>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>FESTIVAL ALCÁNTARA 2026 ✦ 3 DÍAS ✦ +40 ARTISTAS ✦ 4 ESCENARIOS ✦ </span>
+      <span>FESTIVAL ALCÁNTARA 2026 ✦ 3 DÍAS ✦ +40 ARTISTAS ✦ 4 ESCENARIOS ✦ </span>
+    </div>
+  </div>
+
+  <!-- ===== LINEUP ===== -->
+  <section class="section lineup" id="lineup">
+    <div class="section__head">
+      <h2 class="section__title">LINE-UP</h2>
+      <p class="section__lead">El cartel completo de esta edición. Más artistas por confirmar.</p>
+    </div>
+
+    <div class="day-tabs" id="dayTabs" role="tablist">
+      <button class="day-tab is-active" data-day="all" role="tab">Todos</button>
+      <button class="day-tab" data-day="1" role="tab">Viernes 13</button>
+      <button class="day-tab" data-day="2" role="tab">Sábado 14</button>
+      <button class="day-tab" data-day="3" role="tab">Domingo 15</button>
+    </div>
+
+    <div class="poster" id="poster"><!-- JS fills this --></div>
+  </section>
+
+  <!-- ===== FECHAS / INFO ===== -->
+  <section class="section dates" id="fechas">
+    <div class="section__head">
+      <h2 class="section__title">INFO</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="info-card__icon">📅</span>
+        <h3>Fechas</h3>
+        <p>Viernes 13, sábado 14 y domingo 15 de marzo de 2026.</p>
+      </div>
+      <div class="info-card">
+        <span class="info-card__icon">📍</span>
+        <h3>Lugar</h3>
+        <p>Parque Central. Apertura de puertas 13:00 h.</p>
+      </div>
+      <div class="info-card">
+        <span class="info-card__icon">🎫</span>
+        <h3>Edad</h3>
+        <p>Evento para todas las edades. Menores de 10 ingresan gratis con adulto.</p>
+      </div>
+      <div class="info-card">
+        <span class="info-card__icon">🚌</span>
+        <h3>Cómo llegar</h3>
+        <p>Transporte público, estacionamientos y servicio de buses desde el centro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCIA ===== -->
+  <section class="section experience" id="experiencia">
+    <div class="section__head">
+      <h2 class="section__title">LA EXPERIENCIA</h2>
+      <p class="section__lead">Mucho más que música.</p>
+    </div>
+    <div class="exp-grid">
+      <article class="exp-card exp-card--big">
+        <h3>4 escenarios</h3>
+        <p>Rock, electrónica, urbano y emergentes conviviendo durante tres días.</p>
+      </article>
+      <article class="exp-card">
+        <h3>Gastronomía</h3>
+        <p>Food trucks y propuestas locales para todos los gustos.</p>
+      </article>
+      <article class="exp-card">
+        <h3>Zona VIP</h3>
+        <p>Accesos preferentes, barras exclusivas y las mejores vistas.</p>
+      </article>
+      <article class="exp-card">
+        <h3>Arte & mercado</h3>
+        <p>Instalaciones, ferias de diseño y experiencias interactivas.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== ENTRADAS ===== -->
+  <section class="section tickets" id="entradas">
+    <div class="section__head">
+      <h2 class="section__title">ENTRADAS</h2>
+      <p class="section__lead">Precios por tramos. Suben a medida que se agotan.</p>
+    </div>
+    <div class="ticket-grid">
+      <div class="ticket">
+        <span class="ticket__tag">1 día</span>
+        <h3 class="ticket__name">Daily Pass</h3>
+        <p class="ticket__price">$45.000</p>
+        <ul>
+          <li>Acceso general por un día</li>
+          <li>Todos los escenarios</li>
+          <li>Zona gastronómica</li>
+        </ul>
+        <a href="#" class="btn btn--primary btn--block">Comprar</a>
+      </div>
+      <div class="ticket ticket--featured">
+        <span class="ticket__tag">Más popular</span>
+        <h3 class="ticket__name">Abono 3 días</h3>
+        <p class="ticket__price">$110.000</p>
+        <ul>
+          <li>Acceso los tres días</li>
+          <li>Todos los escenarios</li>
+          <li>Acceso prioritario</li>
+          <li>Regalo de bienvenida</li>
+        </ul>
+        <a href="#" class="btn btn--primary btn--block">Comprar</a>
+      </div>
+      <div class="ticket">
+        <span class="ticket__tag">Premium</span>
+        <h3 class="ticket__name">VIP 3 días</h3>
+        <p class="ticket__price">$220.000</p>
+        <ul>
+          <li>Zona VIP exclusiva</li>
+          <li>Barras y baños privados</li>
+          <li>Acceso rápido sin filas</li>
+          <li>Lounge con vista al escenario</li>
+        </ul>
+        <a href="#" class="btn btn--primary btn--block">Comprar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq" id="faq">
+    <div class="section__head">
+      <h2 class="section__title">PREGUNTAS FRECUENTES</h2>
+    </div>
+    <div class="accordion" id="accordion">
+      <div class="acc">
+        <button class="acc__q">¿Dónde se realiza el festival?<span>+</span></button>
+        <div class="acc__a"><p>En el Parque Central. La dirección exacta y los accesos se publicarán junto a las indicaciones de llegada.</p></div>
+      </div>
+      <div class="acc">
+        <button class="acc__q">¿Las entradas incluyen todos los días?<span>+</span></button>
+        <div class="acc__a"><p>Depende del tipo: el Daily Pass es por un día, mientras que el Abono y el VIP cubren los tres días del festival.</p></div>
+      </div>
+      <div class="acc">
+        <button class="acc__q">¿Puedo ingresar comida o bebida?<span>+</span></button>
+        <div class="acc__a"><p>No se permite el ingreso de alimentos ni bebidas. Dentro habrá amplia oferta gastronómica y puntos de hidratación.</p></div>
+      </div>
+      <div class="acc">
+        <button class="acc__q">¿Qué pasa si llueve?<span>+</span></button>
+        <div class="acc__a"><p>El festival se realiza con lluvia o sol. Solo se suspendería por condiciones de seguridad, lo que se comunicaría por los canales oficiales.</p></div>
+      </div>
+      <div class="acc">
+        <button class="acc__q">¿Hay reembolso de entradas?<span>+</span></button>
+        <div class="acc__a"><p>Las entradas no son reembolsables salvo cancelación del evento, según los términos de la ticketera oficial.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPONSORS ===== -->
+  <section class="section sponsors">
+    <p class="sponsors__label">Auspiciadores</p>
+    <div class="sponsors__row">
+      <span>SPONSOR</span><span>MARCA</span><span>PARTNER</span><span>MEDIA</span><span>BRAND</span>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contacto">
+    <div class="footer__top">
+      <div>
+        <p class="footer__logo">FESTIVAL ALCÁNTARA</p>
+        <p class="footer__tag">13 · 14 · 15 marzo 2026</p>
+      </div>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+        <a href="#" aria-label="X">X</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Festival Alcántara. Todos los derechos reservados.</p>
+      <p>Términos · Privacidad · Contacto</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
