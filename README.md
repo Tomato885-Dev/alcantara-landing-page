@@ -35,6 +35,7 @@ Luego entra a `http://localhost:8000`.
 Todo el contenido son datos de ejemplo. Para adaptarlo:
 
 - **Line-up:** edita el array `LINEUP` en `js/main.js`. Cada artista tiene `name`, `size` (`xl`, `l`, `m`, `s` según jerarquía en el cartel) y `days` (en qué días toca).
+- **Galería:** las fotos están en `assets/img/gallery/` numeradas `01.jpg`, `02.jpg`, … Para **agregar más fotos**: copia el archivo a esa carpeta con el siguiente número (ej. `36.jpg`) y actualiza la constante `GALLERY_COUNT` en `js/main.js`. El carrusel/lightbox se genera solo. Para quitar una, bórrala, renumera y ajusta `GALLERY_COUNT`.
 - **Fecha del countdown:** cambia la constante `TARGET` en `js/main.js`.
 - **Fechas, lugar, precios, FAQ:** edita los textos directamente en `index.html`.
 - **Colores:** ajusta las variables al inicio de `css/styles.css` (`--magenta`, `--purple`, `--cyan`, `--lime`).

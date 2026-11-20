@@ -145,26 +145,18 @@
       <h2 class="section__title">GALERÍA</h2>
       <p class="section__lead">Así se vive Alcántara: música, público y mucho más.</p>
     </div>
-    <div class="gallery-grid">
-      <figure class="g-item g-item--wide" style="background-image:url('assets/img/crowd-night.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/live-02.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/band.jpg')"></figure>
-      <figure class="g-item g-item--tall" style="background-image:url('assets/img/bw.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/duo-blue.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/pink.jpg')"></figure>
-      <figure class="g-item g-item--wide" style="background-image:url('assets/img/stage-blue.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/crowd.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/pepsi-stand.jpg')"></figure>
-      <figure class="g-item g-item--wide" style="background-image:url('assets/img/duo-wide.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/chery-car.jpg')"></figure>
-      <figure class="g-item g-item--tall" style="background-image:url('assets/img/live-01.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/students.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/chery-stand.jpg')"></figure>
-      <figure class="g-item g-item--wide" style="background-image:url('assets/img/dj-crowd.jpg')"></figure>
-      <figure class="g-item" style="background-image:url('assets/img/dj.jpg')"></figure>
-      <figure class="g-item g-item--wide" style="background-image:url('assets/img/stage.jpg')"></figure>
-    </div>
+    <!-- Las miniaturas se generan con JS desde js/main.js (array GALLERY) -->
+    <div class="gallery-grid" id="galleryGrid"></div>
   </section>
+
+  <!-- ===== LIGHTBOX (visor de galería) ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Visor de fotos">
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">‹</button>
+    <img class="lightbox__img" id="lbImg" src="" alt="Foto del festival" />
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Siguiente">›</button>
+    <span class="lightbox__counter" id="lbCounter"></span>
+  </div>
 
   <!-- ===== ENTRADAS ===== -->
   <section class="section tickets" id="entradas">

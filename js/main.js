@@ -100,7 +100,70 @@ document.getElementById('accordion').addEventListener('click', e => {
   answer.style.maxHeight = open ? answer.scrollHeight + 'px' : null;
 });
 
-/* ---- 6. Reveal on scroll ---- */
+/* ---- 6. Galería + lightbox ----
+   Las fotos viven en assets/img/gallery/ numeradas 01.jpg, 02.jpg, ...
+   Para AGREGAR más: sube el archivo a esa carpeta y sube GALLERY_COUNT. */
+const GALLERY_COUNT = 35;
+const GALLERY = Array.from({ length: GALLERY_COUNT }, (_, i) =>
+  `assets/img/gallery/${String(i + 1).padStart(2, '0')}.jpg`
+);
+
+const galleryGrid = document.getElementById('galleryGrid');
+if (galleryGrid) {
+  galleryGrid.innerHTML = GALLERY
+    .map((src, i) => `<button class="g-item" style="background-image:url('${src}')" data-index="${i}" aria-label="Ver foto ${i + 1}"></button>`)
+    .join('');
+}
+
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCounter = document.getElementById('lbCounter');
+let lbIndex = 0;
+
+function lbShow(i) {
+  lbIndex = (i + GALLERY.length) % GALLERY.length;
+  lbImg.src = GALLERY[lbIndex];
+  lbCounter.textContent = `${lbIndex + 1} / ${GALLERY.length}`;
+}
+function lbOpen(i) {
+  lbShow(i);
+  lightbox.classList.add('is-open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function lbClose() {
+  lightbox.classList.remove('is-open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (galleryGrid) {
+  galleryGrid.addEventListener('click', e => {
+    const item = e.target.closest('.g-item');
+    if (item) lbOpen(Number(item.dataset.index));
+  });
+  document.getElementById('lbClose').addEventListener('click', lbClose);
+  document.getElementById('lbPrev').addEventListener('click', () => lbShow(lbIndex - 1));
+  document.getElementById('lbNext').addEventListener('click', () => lbShow(lbIndex + 1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lbClose(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') lbClose();
+    else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+  });
+  // Swipe en móvil
+  let touchX = null;
+  lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  lightbox.addEventListener('touchend', e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) lbShow(dx < 0 ? lbIndex + 1 : lbIndex - 1);
+    touchX = null;
+  }, { passive: true });
+}
+
+/* ---- 7. Reveal on scroll ---- */
 const toReveal = document.querySelectorAll('.section__head, .info-card, .exp-card, .ticket, .countdown');
 toReveal.forEach(el => el.setAttribute('data-reveal', ''));
 const io = new IntersectionObserver((entries) => {
