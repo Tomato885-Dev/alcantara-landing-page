@@ -74,14 +74,21 @@ setInterval(tick, 1000);
 const nav = document.getElementById('nav');
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+
 window.addEventListener('scroll', () => nav.classList.toggle('is-scrolled', window.scrollY > 40));
-burger.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('is-open');
+
+function setMenu(open) {
+  navLinks.classList.toggle('is-open', open);
+  navOverlay.classList.toggle('is-open', open);
+  burger.classList.toggle('is-open', open);
   burger.setAttribute('aria-expanded', String(open));
-});
-navLinks.addEventListener('click', e => {
-  if (e.target.tagName === 'A') { navLinks.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); }
-});
+  burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('is-open')));
+navOverlay.addEventListener('click', () => setMenu(false));
+navLinks.addEventListener('click', e => { if (e.target.tagName === 'A') setMenu(false); });
 
 /* ---- 5. FAQ ---- */
 document.getElementById('accordion').addEventListener('click', e => {
